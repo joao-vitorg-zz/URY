@@ -5,31 +5,28 @@
 
 URI Online Judge scrapy
 
-## Table of Contents
-
-- [Setup](#Setup)
-- [Examples](#Examples)
-- [License](#License)
+## Screenshot
+![Screenshot](Screenshot.png)
 
 ## Setup
 Install dependencies.
-```bach
-$ pip3 install -r requirements.txt
+```shell script
+$ pip3 install scrapy
 ```
 
 ## Examples
 Mining default (from 1001 to 1005)
-```bach
+```shell script
 $ scrapy crawl problems
 ```
 
 Mining from 1007
-```bach
+```shell script
 $ scrapy crawl problems -a stop=1007 
 ```
 
 Mining from 1005 to 1010
-```bach
+```shell script
 $ scrapy crawl problems -a start=1005 stop=1010 
 ```
 
