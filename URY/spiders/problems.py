@@ -5,14 +5,15 @@ from scrapy.loader import ItemLoader
 from URY.items import Problem
 
 
-class ProblemasSpider(scrapy.Spider):
+class ProblemsSpider(scrapy.Spider):
     name = 'problems'
 
-    def __init__(self, start=1001, stop=1005, **kwargs):
+    def __init__(self, start=1001, stop=1005, path='result', **kwargs):
         super().__init__(**kwargs)
         self.start_urls = ['https://www.urionlinejudge.com.br/repository/UOJ_%s.html' % start]
         self.number = int(start)
         self.stop = int(stop)
+        self.path = path
 
     def parse(self, response):
         problems = ItemLoader(item=Problem(), response=response)
