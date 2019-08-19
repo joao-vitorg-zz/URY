@@ -15,13 +15,11 @@ SPIDER_MODULES = ['URY.spiders']
 NEWSPIDER_MODULE = 'URY.spiders'
 
 # Export crawl results
-FEED_URI = "results/result-%(time)s.json"
-FEED_FORMAT = "json"
 FEED_EXPORT_ENCODING = 'utf-8'
 FEED_EXPORT_INDENT = 2
 
-# Sisable logs
-LOG_ENABLED = False
+# Disable logs
+# LOG_ENABLED = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'URY (+http://www.yourdomain.com)'
@@ -71,9 +69,9 @@ ROBOTSTXT_OBEY = True
 # }
 
 # Configure item pipelines
-# ITEM_PIPELINES = {
-#    'URY.pipelines.ToJsonPipeline': 300,
-# }
+ITEM_PIPELINES = {
+    'URY.pipelines.ToPython': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

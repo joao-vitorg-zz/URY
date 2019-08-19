@@ -8,7 +8,7 @@ from URY.items import Problem
 class ProblemsSpider(scrapy.Spider):
     name = 'problems'
 
-    def __init__(self, start=1001, stop=1005, path='result', **kwargs):
+    def __init__(self, start=1001, stop=1005, path=None, **kwargs):
         super().__init__(**kwargs)
         self.start_urls = ['https://www.urionlinejudge.com.br/repository/UOJ_%s.html' % start]
         self.number = int(start)
